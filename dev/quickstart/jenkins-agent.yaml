@@ -1,0 +1,24 @@
+queue: example
+jobSetId: job-set-1
+jobs:
+  - namespace: default
+    priority: 0
+    podSpec:
+      priorityClassName: armada-default
+      terminationGracePeriodSeconds: 0
+      restartPolicy: Never
+      containers:
+        - name: jenkins-agent
+          image: eclipse-temurin:21.0.4_7-jdk-jammy
+          command:
+            - sh
+          args:
+            - -c
+            - tail -f /dev/null
+          resources:
+            limits:
+              memory: 1Gi
+              cpu: 2
+            requests:
+              memory: 1Gi
+              cpu: 2
