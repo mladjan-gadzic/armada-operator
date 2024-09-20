@@ -1,0 +1,8 @@
+cat <<EOF > ~/.armadactl.yaml
+currentContext: main
+contexts:
+  main:
+    # URL of the Armada gRPC API
+    armadaUrl: armada-server.armada.svc.cluster.local:50051 # This uses the NodePort configured in the Quickstart guide
+    forceNoTls: true
+EOF
