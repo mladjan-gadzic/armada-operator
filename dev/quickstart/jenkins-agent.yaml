@@ -8,8 +8,8 @@ jobs:
       terminationGracePeriodSeconds: 0
       restartPolicy: Never
       containers:
-        - name: jenkins-agent
-          image: eclipse-temurin:21.0.4_7-jdk-jammy
+        - name: jenkins-agent-0
+          image: jenkins/inbound-agent:latest-jdk21
           command:
             - sh
           args:
@@ -17,8 +17,8 @@ jobs:
             - tail -f /dev/null
           resources:
             limits:
-              memory: 1Gi
+              memory: 512Mi
               cpu: 2
             requests:
-              memory: 1Gi
+              memory: 512Mi
               cpu: 2
