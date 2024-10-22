@@ -72,6 +72,10 @@ spec:
     repository: gresearch/armada-executor
     tag: latest
   applicationConfig:
+    kubernetes:
+      impersonateUsers: false
+      trackedNodeLabels:
+        - kubernetes.io/os
     executorApiConnection:
       armadaUrl: armada-scheduler.armada.svc.cluster.local:50051
       forceNoTls: true

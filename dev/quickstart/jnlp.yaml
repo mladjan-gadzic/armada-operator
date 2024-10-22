@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: jnlp
+  labels:
+    jenkins: jenkins-agent
+spec:
+  containers:
+  - name: jnlp
+    image: jenkins/inbound-agent:latest-jdk21
+    resources:
+      limits:
+        memory: "512Mi"
+        cpu: "200m"
+      requests:
+        memory: "512Mi"
+        cpu: "200m"
+  nodeSelector:
+    kubernetes.io/os: linux
